@@ -8,6 +8,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SketchBlock';
+    src: url('./assets/Fonts/Sketch_Block.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WCRoughTrad';
+    src: url('./assets/Fonts/WC_RoughTrad.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html,
 body,
 #root {
@@ -51,4 +66,105 @@ body {
 #root {
     display: flex;
     flex-direction: column;
+}
+
+/* 2026 Cyber Aesthetic Utilities & Keyframes */
+@keyframes cyberGlowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), 0 0 40px rgba(0, 240, 255, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(212, 175, 55, 0.5), 0 0 60px rgba(0, 240, 255, 0.35);
+    }
+}
+
+@keyframes holographicSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes holographicSpinReverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes radarSweep {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatEmbers {
+    0% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-40px) translateX(15px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) translateX(-10px);
+        opacity: 0;
+    }
+}
+
+.animate-cyber-glow {
+    animation: cyberGlowPulse 4s infinite ease-in-out;
+}
+
+.animate-holo-spin {
+    animation: holographicSpin 25s linear infinite;
+}
+
+.animate-holo-spin-reverse {
+    animation: holographicSpinReverse 18s linear infinite;
+}
+
+.animate-radar {
+    animation: radarSweep 3s linear infinite;
+}
+
+.cyber-glass {
+    background: rgba(12, 10, 24, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.cyber-glass-glow {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cyber-glass-gold {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(6, 0, 16, 0.7));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.text-gradient-gold-cyan {
+    background: linear-gradient(135deg, #FFF2C2 0%, #E7C159 40%, #00F0FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-phoenix {
+    background: linear-gradient(135deg, #FF7B00 0%, #FFB703 50%, #FFE8A3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

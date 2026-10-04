@@ -54,7 +54,7 @@ const Impact = () => {
     };
 
     return (
-        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#050505] min-h-screen">
+        <section className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#05020c] min-h-screen">
             {/* 1. Canvas Layer */}
             <canvas
                 ref={canvasRef}
@@ -62,13 +62,41 @@ const Impact = () => {
             />
 
             {/* 2. Gradient Overlay for Stacking Depth */}
-            <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" />
+            <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-[#05020c] via-transparent to-[#05020c]" />
 
             <div className="w-full px-0 sm:px-4 lg:px-[6vw] relative z-10">
-                <div className="mb-12 sm:mb-16 lg:mb-24 text-center">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-boldonse font-bold text-white uppercase tracking-tighter leading-tight">
-                        How Hack<span className="text-[#D4AF37]">Series</span> <br /> Helps Students
+                {/* Header */}
+                <div className="mb-14 sm:mb-18 lg:mb-20 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-black/60 backdrop-blur-md mb-5 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+                        <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
+                        <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.25em] text-gray-300 uppercase">
+                            IMPACT &amp; OUTCOMES // PROVEN BENCHMARKS
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white uppercase tracking-tight leading-tight mb-8">
+                        How Hack<span className="text-gradient-gold-cyan font-black">Series</span> <br /> Transforms Builders
                     </h2>
+
+                    {/* Quick Stats Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto p-6 rounded-2xl bg-white/[0.02] border border-[#D4AF37]/25 backdrop-blur-xl">
+                        <div className="text-center p-3 border-r border-white/5 last:border-none">
+                            <span className="text-3xl sm:text-4xl font-black text-[#E7C159]">1,500+</span>
+                            <span className="block text-xs text-gray-400 uppercase tracking-widest mt-1">Hackers Trained</span>
+                        </div>
+                        <div className="text-center p-3 border-r border-white/5 last:border-none">
+                            <span className="text-3xl sm:text-4xl font-black text-[#00F0FF]">120+</span>
+                            <span className="block text-xs text-gray-400 uppercase tracking-widest mt-1">Projects Shipped</span>
+                        </div>
+                        <div className="text-center p-3 border-r border-white/5 last:border-none">
+                            <span className="text-3xl sm:text-4xl font-black text-[#C084FC]">40+</span>
+                            <span className="block text-xs text-gray-400 uppercase tracking-widest mt-1">Tech Mentors</span>
+                        </div>
+                        <div className="text-center p-3">
+                            <span className="text-3xl sm:text-4xl font-black text-emerald-400">94%</span>
+                            <span className="block text-xs text-gray-400 uppercase tracking-widest mt-1">Internship Rate</span>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Bento Grid: unified mosaic layout */}

@@ -63,7 +63,7 @@ const Why = () => {
     };
 
     return (
-        <section className="relative bg-[#050505] py-20 px-4 md:px-10 min-h-screen flex flex-col justify-center items-center overflow-x-hidden">
+        <section className="relative bg-[#05020c] py-24 px-4 md:px-10 min-h-screen flex flex-col justify-center items-center overflow-x-hidden">
             {/* Embedded styles for the Story progress bar */}
             <style>{`
                 @keyframes fillStoryBar {
@@ -72,34 +72,38 @@ const Why = () => {
                 }
             `}</style>
 
-            {/* Ambient Dark-Red Glow Background */}
-            <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(75,17,17,0.3)_0%,_transparent_60%)]" />
+            {/* Ambient Cyan & Gold Glow Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.1)_0%,_rgba(0,240,255,0.06)_40%,_transparent_70%)]" />
 
             <div className="relative z-10 w-full flex flex-col items-center">
+                {/* Badge Header */}
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-black/60 backdrop-blur-md mb-6 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+                    <span className="w-2 h-2 rounded-full bg-[#E7C159] animate-pulse" />
+                    <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.25em] text-gray-300 uppercase">
+                        CORE PILLARS // 2026 EDITION
+                    </span>
+                </div>
+
                 {/* Title */}
                 <div className="flex flex-col items-center mb-8 md:mb-12">
-                    <h2 className="text-4xl md:text-[6rem] font-boldonse font-bold tracking-tighter uppercase leading-none text-center drop-shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
-                        <span className="text-white">Why</span><br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#D4AF37] to-[#802222] pl-0 md:pl-4 py-2">
-                            HackSeries&nbsp;?
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight uppercase leading-none text-center">
+                        <span className="text-white">Why </span>
+                        <span className="text-gradient-gold-cyan font-black">
+                            HackSeries?
                         </span>
                     </h2>
                 </div>
 
-                {/* Instagram-Style Progress Bars */}
+                {/* Cyber Progress Bars */}
                 <div className="flex gap-2 w-full max-w-[340px] md:max-w-[450px] mb-8">
                     {reasons.map((_, originalIndex) => {
-                        // Check if this segment is the currently active one
                         const isActive = stack[0] === originalIndex;
-                        // Check if this segment has already passed
-                        const isPast = stack.indexOf(originalIndex) > 0 && stack.indexOf(originalIndex) < stack.indexOf(stack[0]);
-                        // Wait, a better logic for past stories in a loop is just filling the active one.
 
                         return (
-                            <div key={originalIndex} className="h-[3px] md:h-1 flex-1 bg-white/20 rounded-full overflow-hidden relative">
+                            <div key={originalIndex} className="h-1 md:h-1.5 flex-1 bg-white/10 rounded-full overflow-hidden relative">
                                 {isActive && !animateOut && (
                                     <div
-                                        className="absolute inset-0 bg-[#D4AF37] origin-left"
+                                        className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#00F0FF] origin-left"
                                         style={{ animation: 'fillStoryBar 5s linear forwards' }}
                                     />
                                 )}
